@@ -9,4 +9,5 @@ dotnet test
 ```
 
 
-TESTING
+TESTING:
+Test the workflow by making a small change to the application code (i.e., add a comment). Commit, push, monitor the workflow and verify that a new container image is built, uniquely tagged and pushed to ACR after each successful workflow run
