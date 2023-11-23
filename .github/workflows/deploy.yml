@@ -12,14 +12,16 @@ jobs:
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
+    - run: echo ${{ env.RESOURCEGROUP }}
 
       # Deploy ARM template
     - name: Run ARM deploy
       uses: azure/arm-deploy@v1
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-        resourceGroup: ${{ env.RESOURCEGROUP }}
-        template: ./InfrastructureAsCode/main.bicep
+        resourceGroupName: ${{ env.RESOURCEGROUP }}
+        template: ./main.bicep
         parameters: storageAccountType=Standard_LRS
 
       # output containerName variable from template
