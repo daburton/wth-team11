@@ -1,7 +1,4 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
-name: Challenge 07 - Build and Push Docker Image to Container Registry
+name: Build and Push Docker Image to Container Registry
 
 on:
   push:
