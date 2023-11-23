@@ -11,17 +11,21 @@ jobs:
   job1:
     name: My first job
     runs-on: ubuntu-latest
+    env:
+      MY_ENV_VAR: "This is my environment variable"
     steps:
       - name: Echo step 1
-        run: echo "This is step 1"
+        run: echo ${{ env.MY_ENV_VAR }}
       - name: Echo step 2
         run: echo "This is step 2"
   job2:
     name: My second job
     needs: job1 # This means job2 depends on job1
     runs-on: ubuntu-latest
+    env:
+      MY_ENV_VAR: "This is my environment variable"
     steps:
       - name: Cowsay step
         uses: mscoutermarsh/cowsays-action@v1
         with:
-          text: "This is a GitHub Action from the marketplace"
+          text: ${{ env.MY_ENV_VAR }}
