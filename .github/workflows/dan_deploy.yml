@@ -19,6 +19,5 @@ jobs:
     - name: 'Deploy Azure Bicep'
       uses: azure/arm-deploy@v1
       with:
-        scope: resourcegroup
         resourceGroupName: ${{ env.AZURE_RESOURCE_GROUP }}
         template: ./workspaces/wth-team11/InfrastructureAsCode/main.bicep
