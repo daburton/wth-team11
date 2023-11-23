@@ -16,6 +16,9 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+    - name: 'Test repository variable recall'
+      run: echo ${{ env.AZURE_RESOURCE_GROUP }}
+
     - name: 'Deploy Azure Bicep'
       uses: azure/arm-deploy@v1
       with:
