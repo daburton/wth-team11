@@ -21,5 +21,5 @@ jobs:
       with:
         scope: resourcegroup
         subscriptionId: ${{ secrets.SUBSCRIPTION_ID }}
-        resourceGroupName: ${{ secrets.RESOURCE_GROUP }}
+        resourceGroupName: ${{ env.RESOURCEGROUP }}
         template: ./workspaces/wth-team11/InfrastructureAsCode/main.bicep
