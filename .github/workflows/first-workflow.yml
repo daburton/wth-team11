@@ -20,9 +20,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Use Cowsays action
-        uses: actions/checkout@v2
-
       - name: Run Cowsays
         uses: mscoutermarsh/cowsays-action@v1
         with:
