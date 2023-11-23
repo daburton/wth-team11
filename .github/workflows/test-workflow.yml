@@ -1,0 +1,20 @@
+on:
+  workflow_dispatch:
+  issues:
+    types:
+      - opened
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World!"
+  job2:
+    name: Cowsays
+    need: [job1]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cows
+        uses: mscoutermarsh/cowsays-action@master
+        with:
+          text: "ship ship ship!"
+          color: "red"
