@@ -6,5 +6,6 @@
 			"installBicep": true,
 			"version": "latest"
 		}
-	}
+	},
+	"postCreateCommand": "dotnet restore Application" 
 }
