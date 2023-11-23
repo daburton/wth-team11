@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
   issues:
-    types: 
+    types:
       - opened
 jobs:
   job1:
@@ -17,4 +17,4 @@ jobs:
         uses: mscoutermarsh/cowsays-action@master
         with:
           text: "ship ship ship!"
-          color:'red'
+          color: "red"
