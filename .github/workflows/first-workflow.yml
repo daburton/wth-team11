@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - dan_test
+  issues:
+    types: [created]
 
 jobs:
   job1:
