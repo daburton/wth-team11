@@ -1,0 +1,26 @@
+name: Deploy Main Test Environment Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: 'Test repository variable recall'
+      run: echo ${{ vars.AZURE_RESOURCE_GROUP }}
+
+    - name: 'Deploy Azure Bicep'
+      uses: azure/arm-deploy@v1
+      with:
+        resourceGroupName: ${{ vars.AZURE_RESOURCE_GROUP }}
+        template: ./InfrastructureAsCode/test.bicep
