@@ -13,8 +13,8 @@ jobs:
     needs: [job1]
     runs-on: ubuntu-latest
     steps:
-    - name: Ship it
+    - name: cow
       uses: mscoutermarsh/cowsays-action@master
       with:
-        text: 'ship ship ship!'
+        text: 'moo'
         color: 'red'
