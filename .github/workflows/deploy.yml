@@ -19,7 +19,7 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ vars.AZURE_RESOURCE_GROUP }}
-        template: ./main.bicep
+        template: ./InfrastructureAsCode/main.bicep
         parameters: storageAccountType=Standard_LRS
 
       # output containerName variable from template
