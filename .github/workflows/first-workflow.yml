@@ -3,5 +3,5 @@ on: workflow_dispatch
 jobs:
   job1:
     runs-on: ubuntu-latest
-      steps:
+    steps:
       - run: echo "Hello world!"
