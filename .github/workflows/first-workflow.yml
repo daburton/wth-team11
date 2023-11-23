@@ -1,7 +1,33 @@
-on: workflow_dispatch
+name: First Workflow
+
+on:
+  push:
+    branches:
+      - main
+  issues:
+    types: [created]
+
 
 jobs:
   job1:
+    name: My first job
     runs-on: ubuntu-latest
+    env:
+      MY_ENV_VAR: "This is my environment variable.. mooooooo"
     steps:
-      - run: echo "Hello world!"
+      - name: Echo step 1
+        run: echo ${{ env.MY_ENV_VAR }}
+      - name: Echo step 2
+        run: echo "Hello world!"
+  job2:
+    name: My second job
+    needs: job1 # This means job2 depends on job1
+    runs-on: ubuntu-latest
+    env:
+      MY_ENV_VAR: "This is my environment variable"
+    steps:
+      - name: Cowsay step
+        uses: mscoutermarsh/cowsays-action@v1
+        with:
+          text: ${{ env.MY_ENV_VAR }}
+          color: 'red'

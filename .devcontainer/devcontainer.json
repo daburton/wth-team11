@@ -11,5 +11,6 @@
         "vscode": {
           "extensions": ["GitHub.copilot"]
         }
-      }
+      },
+	"postCreateCommand": "dotnet restore Application"
 }
