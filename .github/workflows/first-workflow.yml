@@ -1,7 +1,17 @@
-on: workflow_dispatch
+name: First Workflow
+
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   job1:
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo "Hello world!"
+      - name: Step 1
+        run: echo "step1"
+
+      - name: Step 2
+        run: echo "step2"
