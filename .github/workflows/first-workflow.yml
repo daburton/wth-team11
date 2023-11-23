@@ -20,6 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cowsay step
-        uses: mscoutermarsh/cowsay-action@master
+        uses: mscoutermarsh/cowsays-action@v1
         with:
           text: "This is a GitHub Action from the marketplace"
