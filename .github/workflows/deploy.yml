@@ -13,14 +13,12 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     
-    - run: echo "${{ env.RESOURCEGROUP }}" "${{ secrets.AZURE_CREDENTIALS }}" check
-
       # Deploy ARM template
     - name: Run ARM deploy
       uses: azure/arm-deploy@v1
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-        resourceGroupName: ${{ env.RESOURCEGROUP }}
+        resourceGroupName: ${{ vars.RESOURCEGROUP }}
         template: ./main.bicep
         parameters: storageAccountType=Standard_LRS
 
