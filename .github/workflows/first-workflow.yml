@@ -1,7 +1,21 @@
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+  issues:
+    types: 
+      - opened
 
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello world!"
+  job2:
+    name: Cowsays
+    needs: [job1]
+    runs-on: ubuntu-latest
+    steps:
+    - name: cow
+      uses: mscoutermarsh/cowsays-action@master
+      with:
+        text: 'moo'
+        color: 'red'
